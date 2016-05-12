@@ -79,34 +79,22 @@ for (school in education.schools) {
     $(".education-entry:last").append(formattedschoolsLocation);
     $(".education-entry:last").append(formattedschoolsMajor)
 
-    /*for (onLineClass in education.onlineSClasses) {
+function displayOnlineClasses() {
 
-        $("#education").append(HTMLschoolStart);
+for (onLineClass in education.onlineSClasses) {
+
+    $("#onlineClasses").append(HTMLschoolStart);
     
-    var formattedonlineTitle = HTMLonlineTitle.replace("%data", education.onlineClasses[onLineClass].title);
-    var formattedonlinSchool = HTML.replace("%data%", education.onlineSClasses.school[onLineClass].school);
-    var formattedonlineDates = HTMLonLineDates.replace("%data%", onLineClasses.dates[onLineClass].dates);*/
+    var formattedonlineTitle = HTMLonlineTitle.replace("%data%", education.onlineClasses[onLineClass].title);
+    var formattedonlinSchool = HTML.replace("%data%", education.onlineSClasses[onLineClass].school);
+    var formattedonlineDates = HTMLonLineDates.replace("%data%", onLineClasses[onLineClass].dates);
+    
    
 }
 }
-//}
+}
     displayEducation();
-    //displayOnLineClasses();
-
-
-//for (school in education.schools) {
-    //$("#education").append(HTMLschoolStart);
-
-    //var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[school].name); 
-    //var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree); 
-    //var formattedSchoolNameDegree = formattedSchoolName + formattedSchoolDegree;
-    //var formattedschoolsLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
-    //var formattedschoolsMajor = HTMLschoolMajor.replace("%data%", education.schools[school].major);
-
-    //$(".education-entry:last").append(formattedSchoolNameDegree)
-     //$(".education-entry:last").append(formattedschoolsLocation);
-       //$(".education-entry:last").append(formattedschoolsMajor)
-
+    displayOnLineClasses();
 
 
 
