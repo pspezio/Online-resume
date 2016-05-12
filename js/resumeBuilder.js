@@ -88,6 +88,10 @@ for (onLineClass in education.onlineSClasses) {
     var formattedonlineTitle = HTMLonlineTitle.replace("%data%", education.onlineClasses[onLineClass].title);
     var formattedonlinSchool = HTML.replace("%data%", education.onlineSClasses[onLineClass].school);
     var formattedonlineDates = HTMLonLineDates.replace("%data%", onLineClasses[onLineClass].dates);
+
+    $(".education-entry:last").append(formattedonLineClassName);
+    $(".education-entry:last").append(formattedonLineClassSchool);
+    $(".education-entry:last").append(formattedonlineClassDates)
     
    
 }
