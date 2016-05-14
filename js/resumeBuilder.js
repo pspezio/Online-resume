@@ -21,7 +21,7 @@ var formattedimage = HTMLbioPic.replace("%data%", bio.image);
 
 if(bio.skills.length > 0) {
 
-    $("#header").append(HTMLskillsStart);
+$("#header").append(HTMLskillsStart);
 
 
 var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
@@ -43,6 +43,10 @@ $("#topContacts").prepend(formattedlocation);
 $("#header").append(formattedmessage);
 $("#header").append(formattedimage);
 
+
+
+
+
 var education = {
     "schools" : [
     {
@@ -53,53 +57,50 @@ var education = {
     }
     ],
 
-    "onlineClasses" : [
+    "onlineCourses" : [
 {
-    "title" : "FrontEnd Web Developer",
     "school" : "Udacity",
+    "title" : "FrontEnd Web Developer",
     "dates" : 2016
 }
 ]
 }
 
-function displayEducation() {
-for (school in education.schools) {
+function displayEducation() { //start function
+
+    for (school in education.schools) { //start loop
+        $("#education").append(HTMLschoolStart);
+        var formattedschoolName = HTMLschoolName.replace("%data%", education.schools[school].name);
+        var formattedLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
+        var formattedschoolDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
+        var formattedNameDegree = formattedschoolName + formattedschoolDegree;
+        var formattedschoolMajor = HTMLschoolMajor.replace("%data%", education.schools[school].major);
+        $(".education-entry:last").append(formattedNameDegree);
+        $(".education-entry:last").append(formattedLocation);
+        $(".education-entry:last").append(formattedschoolMajor);
+
+    } //end loop
+ for (onlineCourse in education.onlineCourses) {//start loop
+  $("#education").append(HTMLonlineClasses)
   $("#education").append(HTMLschoolStart);
-  var formattedschoolName = HTMLschoolName.replace("%data%", education.schools[school].name);
-  var formattedschoolDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
-  var formattedNameDegree = formattedschoolName + formattedschoolDegree;
-  
-  $(".education-entry:last").append(formattedNameDegree);
-  
-  
-  var formattedschoolDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
-  $(".education-entry:last").append(formattedschoolDates);
+
+  var formattedOnlineTitle = HTMLonlineTitle.replace("%data%" , education.onlineCourses[onlineCourse].title);
+  var formattedOnlineSchool = HTMLonlineSchool.replace("%data%" , education.onlineCourses[onlineCourse].school);
+  var formattedOnlineTitleOnlineSchool = formattedOnlineTitle + formattedOnlineSchool;
+  var formattedOnlineDates = HTMLonlineDates.replace("%data%" , education.onlineCourses[onlineCourse].dates);
+  $(".education-entry:last").append(formattedOnlineTitleOnlineSchool);
+  $(".education-entry:last").append(formattedOnlineDates);
   
   
-  var formattedschoolMajor = HTMLschoolMajor.replace("%data%", education.schools[school].major);
-  $(".education-entry:last").append(formattedschoolMajor);
-    }
- for (onlineCourse in education.onlineCourses) {
-     $("#education").append(HTMLschoolStart);
   
-  
-  var formattedonlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[onlineCourse].title);
-  var formattedonlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[onlineCourse].school);
-  var formattedonlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[onlineCourse].dates);
-  var formattedTitleSchool = formattedonlineTitle + formattedonlineSchool;
-  
-  $(".education-entry:last").append(formattedTitleSchool);
   
   
   var formattedonlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[onlineCourse].dates);
   $(".education-entry:last").append(formattedonlineDates);
   
   
-  var formattedonlineURL = HTMLonlineURL.replace("%data%", education.onlineCourses[onlineCourse].url);
-  $(".education-entry:last").append(formattedonlineURL);
-    }
-    $("#education").append(HTMLonlineClasses);
-}
+  
+}//end function
 displayEducation();
 
 
@@ -205,4 +206,4 @@ for(job in work.jobs) {
   //logClicks(x,y);
 //});
 
-$("#mapDiv").append(googleMap);
+//$("#mapDiv").append(googleMap);
