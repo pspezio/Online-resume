@@ -1,7 +1,7 @@
 var bio = {
     "name": "Patrick Spezio",
     "role": "Web Designer",
-    "contact": {
+    "contacts": {
         "email": "pspezio@hotmail.com",
         "location": "Tampa, Florda",
         "phone": "504-957-8878"
@@ -13,9 +13,9 @@ var bio = {
 
 var formattedName = HTMLheaderName.replace("%data%", bio.name);
 var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-var formattedemail = HTMLemail.replace("%data%", bio.contact.email);
-var formattedlocation = HTMLlocation.replace("%data%", bio.contact.location);
-var formattedphone = HTMLmobile.replace("%data%", bio.contact.phone);
+var formattedemail = HTMLemail.replace("%data%", bio.contacts.email);
+var formattedlocation = HTMLlocation.replace("%data%", bio.contacts.location);
+var formattedphone = HTMLmobile.replace("%data%", bio.contacts.phone);
 var formattedmessage = HTMLWelcomeMsg.replace("%data%", bio.welcomeMessage); 
 var formattedimage = HTMLbioPic.replace("%data%", bio.image);
 
@@ -32,6 +32,7 @@ formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
 $("#skills").append(formattedSkill);
 
 
+
 }
 
 $("#header").prepend(formattedRole);
@@ -45,13 +46,11 @@ $("#header").append(formattedimage);
 
 
 
-
-
 var education = {
     "schools" : [
     {
         "name" : "O. Perry Walker High School",
-        "location" : "New Orleans, La.",
+        "location" : "New Orleans, La. 70114",
         "degree" :"High School Diploma",
         "major" : "Business Education"
     }
@@ -80,27 +79,21 @@ function displayEducation() { //start function
         $(".education-entry:last").append(formattedschoolMajor);
 
     } //end loop
- for (onlineCourse in education.onlineCourses) {//start loop
-  $("#education").append(HTMLonlineClasses)
-  $("#education").append(HTMLschoolStart);
 
-  var formattedOnlineTitle = HTMLonlineTitle.replace("%data%" , education.onlineCourses[onlineCourse].title);
-  var formattedOnlineSchool = HTMLonlineSchool.replace("%data%" , education.onlineCourses[onlineCourse].school);
-  var formattedOnlineTitleOnlineSchool = formattedOnlineTitle + formattedOnlineSchool;
-  var formattedOnlineDates = HTMLonlineDates.replace("%data%" , education.onlineCourses[onlineCourse].dates);
-  $(".education-entry:last").append(formattedOnlineTitleOnlineSchool);
-  $(".education-entry:last").append(formattedOnlineDates);
-  
-  
-  
-  
-  
-  var formattedonlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[onlineCourse].dates);
-  $(".education-entry:last").append(formattedonlineDates);
-  
-  
-  
-}//end function
+    for (onlineCourse in education.onlineCourses) { //start loop
+        $("#education").append(HTMLonlineClasses);
+        $("#education").append(HTMLschoolStart);
+
+        var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[onlineCourse].title);
+        var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[onlineCourse].school);
+        var formattedOnlineTitleOnlineSchool = formattedOnlineTitle + formattedOnlineSchool;
+        var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[onlineCourse].dates);
+        $(".education-entry:last").append(formattedOnlineTitleOnlineSchool);
+        $(".education-entry:last").append(formattedOnlineDates);
+
+
+    }//end loop
+} //end function
 displayEducation();
 
 
@@ -195,15 +188,4 @@ for(job in work.jobs) {
     projects.display();
 
 
-    
-
-    
-//$(document).click(function(loc) {
-
-  //var x = loc.pageX;
-  //var y = loc.pageY;
-
-  //logClicks(x,y);
-//});
-
-//$("#mapDiv").append(googleMap);
+$("#mapDiv").append(googleMap);
