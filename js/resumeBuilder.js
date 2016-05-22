@@ -46,7 +46,9 @@ $("#topContacts").append(formattedphone);
 $("#topContacts").prepend(formattedlocation);
 $("#header").append(formattedmessage);
 $("#header").append(formattedimage);
-
+$("#footerContacts").append(formattedphone);
+$("#footerContacts").append(formattedemail);
+$("#footerContacts").append(formattedgithub);
 
 
 var education = {
@@ -81,7 +83,7 @@ function displayEducation() { //start function
         var formattedschoolMajor = HTMLschoolMajor.replace("%data%", education.schools[school].major);
         $(".education-entry:last").append(formattedNameDegree);
         $(".education-entry:last").append(formattedLocation);
-        $(".education-entry :last").append(formattedschoolDates);
+        $(".education-entry:last").append(formattedschoolDates);
         $(".education-entry:last").append(formattedschoolMajor);
 
     } //end loop
@@ -110,11 +112,13 @@ var work = {
     {
         "employer": "HardRock Casino",
         "title": "Dealer/Supervisor",
+        "location": "Tampa Florida",
         "dates": "November 2008 to Present",
         "description": "Overseen all policies and procedures, customer service and money management."
     }, {
         "employer": "L'Auberge Casino",
         "title": "Pit Manager",
+        "location": "Lake Charles Louisiana",
         "dates": "November 2003 to November 2008",
         "description": "Overseen all policies and procedures, customer service and money management."
     }
@@ -135,12 +139,13 @@ for(job in work.jobs) {
     var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
     var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
     var formattedEmployerTitle = formattedEmployer + formattedTitle;
-    $(".work-entry:last").append(formattedEmployerTitle);
-
+    var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location)
     var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
-    $(".work-entry:last").append(formattedDates);
-
     var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+
+    $(".work-entry:last").append(formattedEmployerTitle);
+    $(".work-entry:last").append(formattedLocation);
+    $(".work-entry:last").append(formattedDates);
     $(".work-entry:last").append(formattedDescription);
 }
 }
