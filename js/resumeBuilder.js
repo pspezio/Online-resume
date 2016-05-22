@@ -3,6 +3,7 @@ var bio = {
     "role": "Web Designer",
     "contacts": {
         "email": "pspezio@hotmail.com",
+        "github": "https://github.com/pspezio",
         "location": "Tampa, Florda",
         "phone": "504-957-8878"
     },
@@ -14,6 +15,7 @@ var bio = {
 var formattedName = HTMLheaderName.replace("%data%", bio.name);
 var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
 var formattedemail = HTMLemail.replace("%data%", bio.contacts.email);
+var formattedgithub = HTMLgithub.replace("%data%", bio.contacts.github);
 var formattedlocation = HTMLlocation.replace("%data%", bio.contacts.location);
 var formattedphone = HTMLmobile.replace("%data%", bio.contacts.phone);
 var formattedmessage = HTMLWelcomeMsg.replace("%data%", bio.welcomeMessage); 
@@ -39,6 +41,7 @@ $("#header").prepend(formattedRole);
 $("#header").prepend(formattedName);
 
 $("#topContacts").append(formattedemail);
+$("#topContacts").append(formattedgithub);
 $("#topContacts").append(formattedphone);
 $("#topContacts").prepend(formattedlocation);
 $("#header").append(formattedmessage);
@@ -51,6 +54,7 @@ var education = {
     {
         "name" : "O. Perry Walker High School",
         "location" : "New Orleans, La. 70114",
+        "dates" : "From 1979 to 1982",
         "degree" :"High School Diploma",
         "major" : "Business Education"
     }
@@ -71,11 +75,13 @@ function displayEducation() { //start function
         $("#education").append(HTMLschoolStart);
         var formattedschoolName = HTMLschoolName.replace("%data%", education.schools[school].name);
         var formattedLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
+        var formattedschoolDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
         var formattedschoolDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
         var formattedNameDegree = formattedschoolName + formattedschoolDegree;
         var formattedschoolMajor = HTMLschoolMajor.replace("%data%", education.schools[school].major);
         $(".education-entry:last").append(formattedNameDegree);
         $(".education-entry:last").append(formattedLocation);
+        $(".education-entry :last").append(formattedschoolDates);
         $(".education-entry:last").append(formattedschoolMajor);
 
     } //end loop
