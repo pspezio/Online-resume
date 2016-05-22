@@ -54,7 +54,7 @@ var education = {
     {
         "name" : "O. Perry Walker High School",
         "location" : "New Orleans, La. 70114",
-        "dates" : "From 1979 to 1982",
+        "dates" : "From 1979 - 1982",
         "degree" :"High School Diploma",
         "major" : "Business Education"
     }
