@@ -9,7 +9,7 @@ var bio = {
     },
     "welcomeMessage": "Love All.",
     "skills": ["HTML", "Css", "Javascript"],
-    "image": "images/spezio.jpg"
+    "image": "images/spezio2.jpg"
 };
 
 var formattedName = HTMLheaderName.replace("%data%", bio.name);
@@ -66,7 +66,7 @@ var education = {
 {
     "school" : "Udacity",
     "title" : "FrontEnd Web Developer",
-    "dates" : 2016
+    "dates" : "From 1/28/2016 - Present"
 }
 ]
 }
@@ -158,45 +158,47 @@ for(job in work.jobs) {
             "title": "Mockup to Article",
             "dates": "January 2016.",
             "description": "Mock up of Udacity project number 2.",
-            "images": ""
+            "images": [
+            "images/mug.png"
+            ]
         }, {
 
 
-        "title": "Build a Portfolio Site ",
-        "dates": "Febuary 2016",
-        "description": "Udacity project build a portfolio site using responsive design.",
-        "images": ""
+            "title": "Build a Portfolio Site ",
+            "dates": "Febuary 2016",
+            "description": "Udacity project build a portfolio site using responsive design.",
+            "images": [
+            "images/Brees.jpg"
+            ]
 }
 ]
     }
 
 
-    //var displayProjects = function() {
-     projects.display = function() {   
-        for (project in projects.projects) {
-            $("#projects").append(HTMLprojectStart);
+     projects.display = function() {
+    for (project in projects.projects) {
+        $("#projects").append(HTMLprojectStart);
 
-            var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
-            $(".project-entry:last").append(formattedTitle);
+        var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
+        $(".project-entry:last").append(formattedTitle);
 
-            var formattedDates = HTMLprojectDates.replace("%data%",projects.projects[project].dates);
-            $(".project-entry:last").append(formattedDates);
+        var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
+        $(".project-entry:last").append(formattedDates);
 
-            var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
-             $(".project-entry:last").append(formattedDescription);
+        var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
+        $(".project-entry:last").append(formattedDescription);
 
-             if (projects.projects[project].images.length > 0) {
-                for (image in projects.projects[project].images) {
-                    var formattedImage = HTMLprojectImage.replace("%data%",projects.projects[project].images[image]);
-                    $(".project-entry:last").append(formattedImage);
+        if (projects.projects[project].images.length > 0) {
+            for (image in projects.projects[project].images) {
+                var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
+                $(".project-entry:last").append(formattedImage);
 
-                }
-             }
-
+            }
         }
+
     }
+}
 
-    projects.display();
-
+projects.display();
 
 $("#mapDiv").append(googleMap);
