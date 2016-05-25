@@ -1,6 +1,6 @@
 var bio = {
     "name": "Patrick Spezio",
-    "role": "Web Designer",
+    "role": "Web Developer",
     "contacts": {
         "email": "pspezio@hotmail.com",
         "github": "https://github.com/pspezio",
@@ -18,20 +18,20 @@ var formattedemail = HTMLemail.replace("%data%", bio.contacts.email);
 var formattedgithub = HTMLgithub.replace("%data%", bio.contacts.github);
 var formattedlocation = HTMLlocation.replace("%data%", bio.contacts.location);
 var formattedphone = HTMLmobile.replace("%data%", bio.contacts.phone);
-var formattedmessage = HTMLWelcomeMsg.replace("%data%", bio.welcomeMessage); 
+var formattedmessage = HTMLWelcomeMsg.replace("%data%", bio.welcomeMessage);
 var formattedimage = HTMLbioPic.replace("%data%", bio.image);
 
-if(bio.skills.length > 0) {
+if (bio.skills.length > 0) {
 
-$("#header").append(HTMLskillsStart);
+    $("#header").append(HTMLskillsStart);
 
 
-var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
-$("#skills").append(formattedSkill);
-formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
-$("#skills").append(formattedSkill);
-formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
-$("#skills").append(formattedSkill);
+    var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
+    $("#skills").append(formattedSkill);
+    formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
+    $("#skills").append(formattedSkill);
+    formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
+    $("#skills").append(formattedSkill);
 
 
 
@@ -52,24 +52,20 @@ $("#footerContacts").append(formattedgithub);
 
 
 var education = {
-    "schools" : [
-    {
-        "name" : "O. Perry Walker High School",
-        "location" : "New Orleans, La. 70114",
-        "dates" : "From 1979 - 1982",
-        "degree" :"High School Diploma",
-        "major" : "Business Education"
-    }
-    ],
+    "schools": [{
+        "name": "O. Perry Walker High School",
+        "location": "New Orleans, La. 70114",
+        "dates": "From 1979 - 1982",
+        "degree": "High School Diploma",
+        "major": "Business Education"
+    }],
 
-    "onlineCourses" : [
-{
-    "school" : "Udacity",
-    "title" : "FrontEnd Web Developer",
-    "dates" : "From 1/28/2016 - Present"
-}
-]
-}
+    "onlineCourses": [{
+        "school": "Udacity",
+        "title": "FrontEnd Web Developer",
+        "dates": "From 1/28/2016 - Present"
+    }]
+};
 
 function displayEducation() { //start function
 
@@ -100,7 +96,7 @@ function displayEducation() { //start function
         $(".education-entry:last").append(formattedOnlineDates);
 
 
-    }//end loop
+    } //end loop
 } //end function
 displayEducation();
 
@@ -108,8 +104,7 @@ displayEducation();
 
 
 var work = {
-    "jobs": [
-    {
+    "jobs": [{
         "employer": "HardRock Casino",
         "title": "Dealer/Supervisor",
         "location": "Tampa Florida",
@@ -121,8 +116,7 @@ var work = {
         "location": "Lake Charles Louisiana",
         "dates": "November 2003 to November 2008",
         "description": "Overseen all policies and procedures, customer service and money management."
-    }
-    ]
+    }]
 };
 
 
@@ -130,52 +124,50 @@ var work = {
 function displayWork() {
     // body...
 
-for(job in work.jobs) {
+    for (job in work.jobs) {
 
 
-    // create new div for work experince
-    $("#workExperience").append(HTMLworkStart);
-    // concat employer and title
-    var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
-    var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
-    var formattedEmployerTitle = formattedEmployer + formattedTitle;
-    var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location)
-    var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
-    var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+        // create new div for work experince
+        $("#workExperience").append(HTMLworkStart);
+        // concat employer and title
+        var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+        var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+        var formattedEmployerTitle = formattedEmployer + formattedTitle;
+        var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
+        var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+        var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
 
-    $(".work-entry:last").append(formattedEmployerTitle);
-    $(".work-entry:last").append(formattedLocation);
-    $(".work-entry:last").append(formattedDates);
-    $(".work-entry:last").append(formattedDescription);
-}
-}
-    displayWork();
-
-
-    var projects = {
-    "projects": [
-{
-            "title": "Mockup to Article",
-            "dates": "January 2016.",
-            "description": "Mock up of Udacity project number 2.",
-            "images": [
-            "images/mug.png"
-            ]
-        }, {
-
-
-            "title": "Build a Portfolio Site ",
-            "dates": "Febuary 2016",
-            "description": "Udacity project build a portfolio site using responsive design.",
-            "images": [
-            "images/Brees.jpg"
-            ]
-}
-]
+        $(".work-entry:last").append(formattedEmployerTitle);
+        $(".work-entry:last").append(formattedLocation);
+        $(".work-entry:last").append(formattedDates);
+        $(".work-entry:last").append(formattedDescription);
     }
+}
+displayWork();
 
 
-     projects.display = function() {
+var projects = {
+    "projects": [{
+        "title": "Mockup to Article",
+        "dates": "January 2016.",
+        "description": "Mock up of Udacity project number 2.",
+        "images": [
+            "images/mug.png"
+        ]
+    }, {
+
+
+        "title": "Build a Portfolio Site ",
+        "dates": "Febuary 2016",
+        "description": "Udacity project build a portfolio site using responsive design.",
+        "images": [
+            "images/Brees.jpg"
+        ]
+    }]
+};
+
+
+projects.display = function() {
     for (project in projects.projects) {
         $("#projects").append(HTMLprojectStart);
 
@@ -197,7 +189,7 @@ for(job in work.jobs) {
         }
 
     }
-}
+};
 
 projects.display();
 
