@@ -12,6 +12,9 @@ var bio = {
     "image": "images/spezio2.jpg"
 };
 
+function displayBio() {//start function
+    //for (school in education.schools) { //start loop
+
 var formattedName = HTMLheaderName.replace("%data%", bio.name);
 var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
 var formattedemail = HTMLemail.replace("%data%", bio.contacts.email);
@@ -32,10 +35,13 @@ if (bio.skills.length > 0) {
     $("#skills").append(formattedSkill);
     formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
     $("#skills").append(formattedSkill);
+}//end loop
 
 
 
 }
+//}//end function
+
 
 $("#header").prepend(formattedRole);
 $("#header").prepend(formattedName);
@@ -49,6 +55,8 @@ $("#header").append(formattedimage);
 $("#footerContacts").append(formattedphone);
 $("#footerContacts").append(formattedemail);
 $("#footerContacts").append(formattedgithub);
+
+displayBio();
 
 
 var education = {
@@ -66,6 +74,7 @@ var education = {
         "dates": "From 1/28/2016 - Present"
     }]
 };
+
 
 function displayEducation() { //start function
 
