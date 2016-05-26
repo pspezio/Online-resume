@@ -13,7 +13,7 @@ var bio = {
 };
 
 function displayBio() {//start function
-    //for (school in education.schools) { //start loop
+   
 
 var formattedName = HTMLheaderName.replace("%data%", bio.name);
 var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
@@ -35,16 +35,9 @@ if (bio.skills.length > 0) {
     $("#skills").append(formattedSkill);
     formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
     $("#skills").append(formattedSkill);
-}//end loop
 
-
-
-}
-//}//end function
-
-
-$("#header").prepend(formattedRole);
-$("#header").prepend(formattedName);
+    $("#header").prepend(formattedRole);
+    $("#header").prepend(formattedName);
 
 $("#topContacts").append(formattedemail);
 $("#topContacts").append(formattedgithub);
@@ -55,6 +48,11 @@ $("#header").append(formattedimage);
 $("#footerContacts").append(formattedphone);
 $("#footerContacts").append(formattedemail);
 $("#footerContacts").append(formattedgithub);
+
+
+
+}//end function
+
 
 displayBio();
 
@@ -202,4 +200,4 @@ projects.display = function() {
 
 projects.display();
 
-$("#mapDiv").append(googleMap);
+$("#mapDiv").append(googleMap)
