@@ -12,7 +12,21 @@ var bio = {
     "image": "images/spezio2.jpg"
 };
 
-bio.display = function () {
+/*bio.display = function () {
+    for (bio in bios.bios) {
+        if (bio.skills.length > 0) {
+
+    $("#header").append(HTMLskillsStart);
+
+
+    var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
+    $("#skills").append(formattedSkill);
+    formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
+    $("#skills").append(formattedSkill);
+    formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
+    $("#skills").append(formattedSkill);
+
+    }
 
   var formattedName = HTMLheaderName.replace("%data%",bio.name);
   var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
@@ -34,58 +48,18 @@ var allContacts = formattedMobile + formattedEmail + formattedGithub + formatted
 $("#topContacts").append(allContacts);
 $("#footerContacts").append(allContacts);
 
-if(bio.Languages.length > 0) {
-
-  $("#header").append(HTMLLanguagesStart);
-
- var formattedLang = HTMLLanguages.replace("%data%",bio.Languages[0]);
- $("#skills").append(formattedLang);
- var formattedLang = HTMLLanguages.replace("%data%",bio.Languages[1]);
-$("#skills").append(formattedLang);
-var formattedLang = HTMLLanguages.replace("%data%",bio.Languages[2]);
-$("#skills").append(formattedLang);
-var formattedLang = HTMLLanguages.replace("%data%",bio.Languages[3]);
-$("#skills").append(formattedLang);
-};
-
-if(bio.Frameworks/Libraries.length > 0) {
-
-  $("#header").append(HTMLFrameworks/LibrariesStart);
-
-var formattedFramework = HTMLFrameworks/Libraries.replace("%data%",bio.Frameworks/Libraries[0]);
-$("#skills").append(formattedFramework);
-var formattedFramework = HTMLFrameworks/Libraries.replace("%data%",bio.Frameworks/Libraries[1]);
-$("#skills").append(formattedFramework);
-var formattedFramework = HTMLFrameworks/Libraries.replace("%data%",bio.Frameworks/Libraries[2]);
-$("#skills").append(formattedFramework);
-var formattedFramework = HTMLFrameworks/Libraries.replace("%data%",bio.Frameworks/Libraries[3]);
-$("#skills").append(formattedFramework);
-var formattedFramework = HTMLFrameworks/Libraries.replace("%data%",bio.Frameworks/Libraries[4]);
-$("#skills").append(formattedFramework);
-var formattedFramework = HTMLFrameworks/Libraries.replace("%data%",bio.Frameworks/Libraries[5]);
-$("#skills").append(formattedFramework);
-var formattedFramework = HTMLFrameworks/Libraries.replace("%data%",bio.Frameworks/Libraries[6]);
-$("#skills").append(formattedFramework);
-}
-
-if(bio.Other.length > 0) {
-
-     $("#header").append(HTMLOtherStart);
-
-var formattedOther = HTMLOther.replace("%data%",bio.Other[0]);
-$("#skills").append(formattedOther);
-var formattedOther = HTMLOther.replace("%data%",bio.Other[1]);
-$("#skills").append(formattedOther);
-var formattedOther = HTMLOther.replace("%data%",bio.Other[2]);
-$("#skills").append(formattedOther);
-}
-
-};
-
-bio.display(); 
 
 
-/*function displayBio() {//start function
+
+
+
+    
+
+
+bio.display(); */
+
+
+function displayBio() {//start function
    
 
 var formattedName = HTMLheaderName.replace("%data%", bio.name);
@@ -127,7 +101,7 @@ $("#footerContacts").append(formattedgithub);
 }//end function
 }
 
-displayBio();*/
+displayBio();
 
 
 var education = {
@@ -199,9 +173,35 @@ var work = {
     }]
 };
 
+work.display = function() {
+    for (job in work.jobs) {
+        $("#workExperience").append(HTMLworkStart);
+
+         var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+         $(".work-entry:last").append(formattedEmployerTitle);
+
+         var formattedEmployerTitle = formattedEmployer + formattedTitle;
+         $(".work-entry:last").append(formattedEmployerTitle);
+
+          var formattedEmployerTitle = formattedEmployer + formattedTitle;
+
+           var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
+           $(".work-entry:last").append(formattedLocation);
+
+           var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+           $(".work-entry:last").append(formattedDates);
+
+           var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+           $(".work-entry:last").append(formattedDescription);
+
+    }
+}
+
+work.display();
 
 
-function displayWork() {
+
+/*function displayWork() {
     // body...
 
     for (job in work.jobs) {
@@ -223,7 +223,7 @@ function displayWork() {
         $(".work-entry:last").append(formattedDescription);
     }
 }
-displayWork();
+displayWork();*/
 
 
 var projects = {
