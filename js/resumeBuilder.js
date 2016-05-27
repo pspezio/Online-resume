@@ -12,7 +12,80 @@ var bio = {
     "image": "images/spezio2.jpg"
 };
 
-function displayBio() {//start function
+bio.display = function () {
+
+  var formattedName = HTMLheaderName.replace("%data%",bio.name);
+  var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+$("#header").prepend(formattedRole);
+$("#header").prepend(formattedName);
+
+var formattedBioPic = HTMLbioPic.replace("%data%", bio.bioPic);
+$("#header").append(formattedBioPic);
+
+var formattedWelcomeMsg = HTMLWelcomeMsg.replace("%data%", bio.welcomeMessage);
+$("#header").append(formattedWelcomeMsg);
+
+var formattedMobile = HTMLmobile.replace("%data%", bio.mobile);
+var formattedEmail = HTMLemail.replace("%data%", bio.email);
+var formattedGithub = HTMLgithub.replace("%data%", bio.github);
+var formattedLocation = HTMLlocation.replace("%data%", bio.location);
+var allContacts = formattedMobile + formattedEmail + formattedGithub + formattedLocation;
+
+$("#topContacts").append(allContacts);
+$("#footerContacts").append(allContacts);
+
+if(bio.Languages.length > 0) {
+
+  $("#header").append(HTMLLanguagesStart);
+
+ var formattedLang = HTMLLanguages.replace("%data%",bio.Languages[0]);
+ $("#skills").append(formattedLang);
+ var formattedLang = HTMLLanguages.replace("%data%",bio.Languages[1]);
+$("#skills").append(formattedLang);
+var formattedLang = HTMLLanguages.replace("%data%",bio.Languages[2]);
+$("#skills").append(formattedLang);
+var formattedLang = HTMLLanguages.replace("%data%",bio.Languages[3]);
+$("#skills").append(formattedLang);
+};
+
+if(bio.Frameworks/Libraries.length > 0) {
+
+  $("#header").append(HTMLFrameworks/LibrariesStart);
+
+var formattedFramework = HTMLFrameworks/Libraries.replace("%data%",bio.Frameworks/Libraries[0]);
+$("#skills").append(formattedFramework);
+var formattedFramework = HTMLFrameworks/Libraries.replace("%data%",bio.Frameworks/Libraries[1]);
+$("#skills").append(formattedFramework);
+var formattedFramework = HTMLFrameworks/Libraries.replace("%data%",bio.Frameworks/Libraries[2]);
+$("#skills").append(formattedFramework);
+var formattedFramework = HTMLFrameworks/Libraries.replace("%data%",bio.Frameworks/Libraries[3]);
+$("#skills").append(formattedFramework);
+var formattedFramework = HTMLFrameworks/Libraries.replace("%data%",bio.Frameworks/Libraries[4]);
+$("#skills").append(formattedFramework);
+var formattedFramework = HTMLFrameworks/Libraries.replace("%data%",bio.Frameworks/Libraries[5]);
+$("#skills").append(formattedFramework);
+var formattedFramework = HTMLFrameworks/Libraries.replace("%data%",bio.Frameworks/Libraries[6]);
+$("#skills").append(formattedFramework);
+}
+
+if(bio.Other.length > 0) {
+
+     $("#header").append(HTMLOtherStart);
+
+var formattedOther = HTMLOther.replace("%data%",bio.Other[0]);
+$("#skills").append(formattedOther);
+var formattedOther = HTMLOther.replace("%data%",bio.Other[1]);
+$("#skills").append(formattedOther);
+var formattedOther = HTMLOther.replace("%data%",bio.Other[2]);
+$("#skills").append(formattedOther);
+}
+
+};
+
+bio.display(); 
+
+
+/*function displayBio() {//start function
    
 
 var formattedName = HTMLheaderName.replace("%data%", bio.name);
@@ -52,9 +125,9 @@ $("#footerContacts").append(formattedgithub);
 
 
 }//end function
+}
 
-
-displayBio();
+displayBio();*/
 
 
 var education = {
@@ -200,4 +273,4 @@ projects.display = function() {
 
 projects.display();
 
-$("#mapDiv").append(googleMap)
+$("#mapDiv").append(googleMap);
