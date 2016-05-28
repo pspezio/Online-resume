@@ -5,11 +5,11 @@ var bio = {
         "email": "pspezio@hotmail.com",
         "github": "https://github.com/pspezio",
         "location": "Tampa, Florda",
-        "phone": "504-957-8878"
+        "mobile": "504-957-8878"
     },
     "welcomeMessage": "Love All.",
     "skills": ["HTML", "Css", "Javascript"],
-    "image": "images/spezio2.jpg"
+    "biopic": "images/spezio2.jpg"
 };
 
 
@@ -21,9 +21,9 @@ bio.display = function() {
     var formattedemail = HTMLemail.replace("%data%", bio.contacts.email);
     var formattedgithub = HTMLgithub.replace("%data%", bio.contacts.github);
     var formattedlocation = HTMLlocation.replace("%data%", bio.contacts.location);
-    var formattedphone = HTMLmobile.replace("%data%", bio.contacts.phone);
+    var formattedmobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
     var formattedmessage = HTMLWelcomeMsg.replace("%data%", bio.welcomeMessage);
-    var formattedimage = HTMLbioPic.replace("%data%", bio.image);
+    var formattedbiopic = HTMLbioPic.replace("%data%", bio.biopic);
 
     if (bio.skills.length > 0) {
 
@@ -42,13 +42,15 @@ bio.display = function() {
 
         $("#topContacts").append(formattedemail);
         $("#topContacts").append(formattedgithub);
-        $("#topContacts").append(formattedphone);
+        $("#topContacts").append(formattedmobile);
         $("#topContacts").prepend(formattedlocation);
+        $("footerContacts").append(formattedlocation);
         $("#header").append(formattedmessage);
-        $("#header").append(formattedimage);
-        $("#footerContacts").append(formattedphone);
+        $("#header").append(formattedbiopic);
+        $("#footerContacts").append(formattedmobile);
         $("#footerContacts").append(formattedemail);
         $("#footerContacts").append(formattedgithub);
+       
 
 
 
@@ -64,13 +66,15 @@ var education = {
         "location": "New Orleans, La. 70114",
         "dates": "From 1979 - 1982",
         "degree": "High School Diploma",
-        "major": "Business Education"
+        "major": ["Business Education"],
+        "url":"",
     }],
 
     "onlineCourses": [{
         "school": "Udacity",
         "title": "FrontEnd Web Developer",
         "dates": "From 1/28/2016 - Present"
+        //"url":"",
     }]
 };
 
@@ -86,6 +90,7 @@ education.display = function() {
         var formattedschoolDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
         var formattedNameDegree = formattedschoolName + formattedschoolDegree;
         var formattedschoolMajor = HTMLschoolMajor.replace("%data%", education.schools[school].major);
+        //var formattedSkill
         $(".education-entry:last").append(formattedNameDegree);
         $(".education-entry:last").append(formattedLocation);
         $(".education-entry:last").append(formattedschoolDates);
@@ -101,8 +106,10 @@ education.display = function() {
         var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[onlineCourse].school);
         var formattedOnlineTitleOnlineSchool = formattedOnlineTitle + formattedOnlineSchool;
         var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[onlineCourse].dates);
+        //var formattedonlineURL = HTMLonlineURL.replace("%data%", education.onlineURL[onlineURL].url);
         $(".education-entry:last").append(formattedOnlineTitleOnlineSchool);
         $(".education-entry:last").append(formattedOnlineDates);
+       // $(".education-entry:last").append(formattedonlineURL);
 
 
     } //end loop
