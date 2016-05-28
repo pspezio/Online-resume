@@ -44,7 +44,7 @@ bio.display = function() {
         $("#topContacts").append(formattedgithub);
         $("#topContacts").append(formattedmobile);
         $("#topContacts").prepend(formattedlocation);
-        $("footerContacts").append(formattedlocation);
+        $("#footerContacts").append(formattedlocation);
         $("#header").append(formattedmessage);
         $("#header").append(formattedbiopic);
         $("#footerContacts").append(formattedmobile);
@@ -55,7 +55,7 @@ bio.display = function() {
 
 
     }
-};
+}
 
 bio.display();
 
@@ -66,15 +66,15 @@ var education = {
         "location": "New Orleans, La. 70114",
         "dates": "From 1979 - 1982",
         "degree": "High School Diploma",
-        "major": ["Business Education"],
-        "url":"",
+        "majors": ["Business Education"],
+        "url":"http://www.landry-walker.org/",
     }],
 
     "onlineCourses": [{
         "school": "Udacity",
         "title": "FrontEnd Web Developer",
-        "dates": "From 1/28/2016 - Present"
-        //"url":"",
+        "dates": "From 1/28/2016 - Present",
+        "url":"www.udacity.com/nanodegree",
     }]
 };
 
@@ -89,12 +89,12 @@ education.display = function() {
         var formattedschoolDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
         var formattedschoolDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
         var formattedNameDegree = formattedschoolName + formattedschoolDegree;
-        var formattedschoolMajor = HTMLschoolMajor.replace("%data%", education.schools[school].major);
+        var formattedschoolMajors = HTMLschoolMajor.replace("%data%", education.schools[school].majors);
         //var formattedSkill
         $(".education-entry:last").append(formattedNameDegree);
         $(".education-entry:last").append(formattedLocation);
         $(".education-entry:last").append(formattedschoolDates);
-        $(".education-entry:last").append(formattedschoolMajor);
+        $(".education-entry:last").append(formattedschoolMajors);
 
     } //end loop
 
@@ -106,10 +106,10 @@ education.display = function() {
         var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[onlineCourse].school);
         var formattedOnlineTitleOnlineSchool = formattedOnlineTitle + formattedOnlineSchool;
         var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[onlineCourse].dates);
-        //var formattedonlineURL = HTMLonlineURL.replace("%data%", education.onlineURL[onlineURL].url);
+        var formattedonlineUrl = HTMLonlineURL.replace("%data%", education.onlineCourses[onlineCourse].url);
         $(".education-entry:last").append(formattedOnlineTitleOnlineSchool);
         $(".education-entry:last").append(formattedOnlineDates);
-       // $(".education-entry:last").append(formattedonlineURL);
+        $(".education-entry:last").append(formattedOnlineUrl);
 
 
     } //end loop
