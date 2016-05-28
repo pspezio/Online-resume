@@ -28,6 +28,11 @@ bio.display = function() {
     if (bio.skills.length > 0) {
 
         $("#header").append(HTMLskillsStart);
+        /*or (var i = 0; i < bio.skills.length; i ++ ) {   
+        var formattedSkill = HTMLskills.replace("%data%", bio.skills[i]);
+        $("#skills").append(formattedSkill);
+      }
+    }*/
 
 
         var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
@@ -81,21 +86,22 @@ var education = {
 
 
 education.display = function() {
-
+    $("#education").append(HTMLschoolStart);
     for (school in education.schools) { //start loop
-        $("#education").append(HTMLschoolStart);
+
         var formattedschoolName = HTMLschoolName.replace("%data%", education.schools[school].name);
         var formattedLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
         var formattedschoolDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
         var formattedschoolDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
         var formattedNameDegree = formattedschoolName + formattedschoolDegree;
         var formattedschoolMajors = HTMLschoolMajor.replace("%data%", education.schools[school].majors);
-        //var formattedSkill
+        var formattedschoolUrl = HTMLschoolURL.replace("%data%", education.schools[school].url);
+    
         $(".education-entry:last").append(formattedNameDegree);
         $(".education-entry:last").append(formattedLocation);
         $(".education-entry:last").append(formattedschoolDates);
         $(".education-entry:last").append(formattedschoolMajors);
-        //$(".education-entry:last").append(formattedHtmlString);
+        $(".education-entry:last").append(formattedschoolUrl);
 
     } //end loop
 
