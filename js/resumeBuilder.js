@@ -28,19 +28,19 @@ bio.display = function() {
     if (bio.skills.length > 0) {
 
         $("#header").append(HTMLskillsStart);
-        /*or (var i = 0; i < bio.skills.length; i ++ ) {   
+        for (var i = 0; i < bio.skills.length; i ++ ) {   
         var formattedSkill = HTMLskills.replace("%data%", bio.skills[i]);
         $("#skills").append(formattedSkill);
       }
-    }*/
+    }
 
 
-        var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
+        /*var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
         $("#skills").append(formattedSkill);
         formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
         $("#skills").append(formattedSkill);
         formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
-        $("#skills").append(formattedSkill);
+        $("#skills").append(formattedSkill);*/
 
         $("#header").prepend(formattedRole);
         $("#header").prepend(formattedName);
@@ -60,7 +60,6 @@ bio.display = function() {
 
 
         }
-}
 
 bio.display();
 
