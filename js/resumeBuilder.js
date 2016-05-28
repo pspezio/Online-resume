@@ -77,7 +77,7 @@ var education = {
     "onlineCourses": [{
         "school": "Udacity",
         "title": "FrontEnd Web Developer",
-        "dates": "From 1/28/2016 - Present",
+        "date": "From 1/28/2016 - Present",
         "url":"www.udacity.com/nanodegree",
     }]
 };
@@ -104,21 +104,22 @@ education.display = function() {
 
     } //end loop
 
-    for (onlineCourse in education.onlineCourses) { //start loop
-        $("#education").append(HTMLonlineClasses);
-        $("#education").append(HTMLschoolStart);
+$("#education").append(HTMLonlineClasses);
+for (onlineCourse in education.onlineCourses) { //start loop
 
-        var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[onlineCourse].title);
-        var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[onlineCourse].school);
-        var formattedOnlineTitleOnlineSchool = formattedOnlineTitle + formattedOnlineSchool;
-        var formattedOnlineDates = HTMLonlineDates.replace("%data%", education.onlineCourses[onlineCourse].dates);
-        var formattedOnlineUrl = HTMLonlineURL.replace("%data%", education.onlineCourses[onlineCourse].url);
-        $(".education-entry:last").append(formattedOnlineTitleOnlineSchool);
-        $(".education-entry:last").append(formattedOnlineDates);
-        $(".education-entry:last").append(formattedOnlineUrl);
+    $("#education").append(HTMLschoolStart);
+
+    var formattedOnlineTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[onlineCourse].title);
+    var formattedOnlineSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[onlineCourse].school);
+    var formattedOnlineTitleOnlineSchool = formattedOnlineTitle + formattedOnlineSchool;
+    var formattedOnlineDate = HTMLonlineDates.replace("%data%", education.onlineCourses[onlineCourse].date);
+    var formattedOnlineUrl = HTMLonlineURL.replace("%data%", education.onlineCourses[onlineCourse].url);
+    $(".education-entry:last").append(formattedOnlineTitleOnlineSchool);
+    $(".education-entry:last").append(formattedOnlineDate);
+    $(".education-entry:last").append(formattedOnlineUrl);
 
 
-    } //end loop
+} //end loop
 }; //end function
 education.display();
 
